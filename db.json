@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Table",
+      "description": "Wood Table",
+      "category": "wood Furniture",
+      "price": "700",
+      "quantity": "8",
+      "supplier": "Jhon Wood"
+    },
+    {
+      "id": 2,
+      "name": "Ruan Carlos Passeto",
+      "description": "Wood Table",
+      "category": "wood Furniture",
+      "price": "5",
+      "quantity": "5",
+      "supplier": "Jhon Wood"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
