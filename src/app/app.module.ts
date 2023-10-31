@@ -7,18 +7,29 @@ import { ProductDashboardComponent } from './product-dashboard/product-dashboard
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductDashboardComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ConfirmationDialogComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TypeaheadModule.forRoot(),
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

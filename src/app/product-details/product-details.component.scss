@@ -1,0 +1,69 @@
+// Importe o Bootstrap (se você estiver usando)
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+$green-light: #4CAF50;
+$green-dark: #388E3C;
+
+// Estilize o cabeçalho
+.custom-header {
+  background-color: $green-light;
+  color: white;
+  padding: 1rem 0;
+}
+
+.custom-header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.custom-header .btn {
+  background-color: $green-dark;
+  color: white;
+  border: none;
+  margin-left: 10px;
+}
+
+.container {
+  margin-top: 3rem;
+  font-size: 16px;
+
+  .formGroup {
+    margin-bottom: 1rem;
+
+    label {
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+    }
+  }
+
+  .btn-secondary {
+    background-color: $green-dark;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: $green-light;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+}

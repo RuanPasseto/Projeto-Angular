@@ -1,0 +1,81 @@
+.form-group {
+  label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 3px;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+}
+// styles.scss
+
+$gray-light: #696969;
+$gray-medium: #ddd;
+
+// Define as cores de verde
+$green-light: #4CAF50;
+$green-dark: #388E3C;
+
+// Estilize a tabela
+table {
+  width: 100%;
+  margin-top: 3rem;
+  background-color: $gray-light;
+  border-collapse: collapse;
+
+  th, td {
+    border: 1px solid $gray-medium;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: $green-light;
+    color: white;
+  }
+
+  tr:nth-child(even) {
+    background-color: $gray-medium;
+  }
+
+
+
+  @media (max-width: 768px) {
+    th, td {
+      padding: 5px;
+    }
+  }
+}
+
+.btn-primary {
+  background-color: $green-light;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background-color: $green-dark;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

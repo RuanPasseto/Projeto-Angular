@@ -6,7 +6,7 @@
       "description": "Wood Table",
       "category": "wood Furniture",
       "price": "700",
-      "quantity": "8",
+      "quantity": "9",
       "supplier": "Jhon Wood"
     },
     {
@@ -17,10 +17,24 @@
       "price": "5",
       "quantity": "5",
       "supplier": "Jhon Wood"
+    },
+    {
+      "id": 3,
+      "name": "Table",
+      "description": "glassTable",
+      "category": "glass",
+      "price": "500",
+      "quantity": "8",
+      "supplier": "Jhon Wood"
+    },
+    {
+      "id": 4,
+      "name": "meudb",
+      "description": "Wood Table",
+      "category": "wood Furniture",
+      "price": "500",
+      "quantity": "8",
+      "supplier": "Jhon Wood"
     }
-  ],
-  "comments": [],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

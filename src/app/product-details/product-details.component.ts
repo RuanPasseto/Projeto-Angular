@@ -22,7 +22,7 @@ export class ProductDetailsComponent {
   showAdd!: boolean;
   showUpdate!: boolean;
 
-  minQuantity = 5;
+  minQuantity = 1;
 
   constructor(private formBuilder: FormBuilder,
     private api: ApiService,
