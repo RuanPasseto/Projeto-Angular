@@ -9,6 +9,7 @@ import { FormBuilder,
 } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-product-details',
@@ -26,7 +27,9 @@ export class ProductDetailsComponent {
 
   constructor(private formBuilder: FormBuilder,
     private api: ApiService,
-    private router: Router){}
+    private router: Router,
+    private toast: NgToastService
+    ){}
 
   ngOnInit(): void{
     this.productForm = new FormGroup({
@@ -81,16 +84,25 @@ export class ProductDetailsComponent {
       this.api.postProduct(this.porductModelObj)
         .subscribe(res => {
           console.log(res);
-          alert('Product Added');
+          this.toast.success({detail:"Succes",
+            summary:"Product Added",
+            duration:5000,
+            position:'topCenter'});
           let ref = document.getElementById('cancel');
           ref?.click();
           this.productForm.reset();
         },
         err => {
-          alert('Something Went wrong');
+          this.toast.error({detail:"ERROR",
+            summary:'Something Went wrong',
+            duration:5000,
+            position:'topCenter'});
         });
     } else {
-      alert('Please fill out the required fields correctly.');
+      this.toast.warning({detail:"WARNING",
+        summary:'Please fill out the required fields correctly.',
+        duration:5000,
+        position: 'topCenter'});
     }
   }
 }

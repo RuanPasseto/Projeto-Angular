@@ -4,37 +4,64 @@
       "id": 1,
       "name": "Table",
       "description": "Wood Table",
-      "category": "wood Furniture",
-      "price": "700",
+      "category": "Wood Furniture",
+      "price": "702",
       "quantity": "9",
       "supplier": "Jhon Wood"
     },
     {
       "id": 2,
-      "name": "Ruan Carlos Passeto",
-      "description": "Wood Table",
-      "category": "wood Furniture",
-      "price": "5",
-      "quantity": "5",
+      "name": "Chair",
+      "description": "Wood Chair",
+      "category": "Wood Furniture",
+      "price": "200",
+      "quantity": "18",
       "supplier": "Jhon Wood"
     },
     {
       "id": 3,
-      "name": "Table",
-      "description": "glassTable",
-      "category": "glass",
-      "price": "500",
-      "quantity": "8",
-      "supplier": "Jhon Wood"
+      "name": "Couch",
+      "description": "Leather couch",
+      "category": "Couchs",
+      "price": "1000",
+      "quantity": "3",
+      "supplier": "Couch World"
     },
     {
       "id": 4,
-      "name": "meudb",
-      "description": "Wood Table",
-      "category": "wood Furniture",
-      "price": "500",
+      "name": "Glass Table",
+      "description": "Glass Table",
+      "category": "glass Furniture",
+      "price": "400",
       "quantity": "8",
-      "supplier": "Jhon Wood"
+      "supplier": "GlassThings"
+    },
+    {
+      "id": 5,
+      "name": "Office Chair",
+      "description": "Office Chair",
+      "category": "Office Furniture",
+      "price": "900",
+      "quantity": "23",
+      "supplier": "O4Y"
+    },
+    {
+      "id": 6,
+      "name": "Picture frame",
+      "description": "Picture frame Large Size",
+      "category": "Pictures",
+      "price": "30",
+      "quantity": "32",
+      "supplier": "Frames"
+    },
+    {
+      "id": 7,
+      "name": "Sideboard",
+      "description": "Wood Sideboard",
+      "category": "Wood Furniture",
+      "price": "80",
+      "quantity": "4",
+      "supplier": "Logan Forniture"
     }
   ]
 }

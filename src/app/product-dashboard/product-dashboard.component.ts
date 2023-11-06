@@ -3,7 +3,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
 import { ProductModel } from './product-dashboard.model';
 import { Router } from '@angular/router';
-import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgConfirmService } from 'ng-confirm-box';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-product-dashboard',
@@ -20,13 +22,20 @@ export class ProductDashboardComponent implements OnInit {
   searchDescription = '';
   searchMinStock: number | undefined;
   searchCategory = '';
+  desc: any
   categories: string[] = [];
   filteredProductData: any[] = [];
   productToDelete: any;
+  showConfirmationDialog: boolean = false;
 
-  @ViewChild(ConfirmationDialogComponent) confirmationDialog!: ConfirmationDialogComponent;
-
-  constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private api: ApiService,
+    private router: Router,
+    private modalService: NgbModal,
+    private confirmService: NgConfirmService,
+    private toast: NgToastService
+    ) {}
 
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
@@ -39,12 +48,38 @@ export class ProductDashboardComponent implements OnInit {
     });
     this.getCategories();
     this.getAllProducts();
+    this.getDescription();
+  }
+
+  getDescription(){
+    this.api.getDescription().subscribe((res:any) =>{
+      this.desc = res
+      console.log(res)
+    })
   }
 
   getCategories() {
     this.api.getCategories().subscribe((categories: string[]) => {
       this.categories = categories;
     });
+  }
+
+  confirmDelete(row: any) {
+    this.confirmService.showConfirm("Are you sure you want to Delete?",
+    ()=>{
+      this.api.deleteProduct(row.id)
+      .subscribe(res=>{
+        this.toast.success({detail:"Succes",
+            summary:"Product Deleted",
+            duration:5000,
+            position:'topCenter'});
+        this.getAllProducts()
+      })
+    },
+    ()=>{
+
+    }
+    )
   }
 
   applyFilters() {
@@ -93,19 +128,6 @@ export class ProductDashboardComponent implements OnInit {
     });
   }
 
-  deleteProduct(row: any) {
-    this.productToDelete = row;
-    this.showConfirmationDialog();
-  }
-
-  showConfirmationDialog() {
-    const confirmationDialog = document.getElementById('confirmationDialog');
-    if (confirmationDialog) {
-      confirmationDialog.classList.add('show');
-    }
-  }
-
-
   onEdit(row: any){
     this.showAdd = false;
     this.showUpdate = true;
@@ -128,12 +150,16 @@ export class ProductDashboardComponent implements OnInit {
 
     this.api.updateProduct(this.porductModelObj, this.porductModelObj.id)
     .subscribe(res=>{
-      alert("Updated Successfully");
+      this.toast.info({detail:"Succes",
+            summary:"Updated Successfully",
+            duration:5000,
+            position:'topCenter'});
       let ref = document.getElementById('cancel');
       ref?.click();
       this.formValue.reset();
       this.getAllProducts();
     });
   }
+
 }
 

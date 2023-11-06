@@ -1,7 +1,13 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-md-4">
-      <input [(ngModel)]="searchDescription" placeholder="Search by Description" class="form-control" />
+      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Search by Description" [(ngModel)]="searchDescription">
+      <datalist id="datalistOptions">
+        <ng-container *ngIf="desc">
+          <option *ngFor="let descr of desc" [value]="descr"></option>
+        </ng-container>
+      </datalist>
+
     </div>
     <div class="col-md-4">
       <input type="number" [(ngModel)]="searchMinStock" placeholder="Search by Min Stock" class="form-control" />
@@ -46,7 +52,7 @@
       <td>{{ row.supplier }}</td>
       <td>
         <button (click)="onEdit(row)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
-        <button (click)="deleteProduct(row)" class="btn btn-danger mx-3">Delete</button>
+        <button (click)="confirmDelete(row)"  class="btn btn-danger mx-3">Delete</button>
       </td>
     </tr>
   </tbody>
